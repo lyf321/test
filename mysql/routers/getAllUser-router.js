@@ -9,11 +9,6 @@ const getAllUser = require("../helpers/getAllUser");
 router.post('/getAllUser', (req, res) => {
     getAllUser(req.body, (result,err)=> {
         let httpCode = 201;
-
-        // console.log("result",result);
-
-        // res.send({httpCode: httpCode, user: result});
-
         if (err) {
             httpCode = 400;
         } else {

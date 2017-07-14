@@ -13,7 +13,6 @@ app.get('*', (req, res) => {
 });
 
 const getALLUser = require("./mysql/routers/getAllUser-router");
-console.log("server: ");
 app.use('/',getALLUser);
 
 var server = app.listen(4000, () => {

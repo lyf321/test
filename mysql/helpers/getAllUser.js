@@ -14,7 +14,6 @@ module.exports = function (data, callback) {
             throw err;
         } else {
             if (results) {
-                console.log("reerer",results);
                 callback(results);
             } else {
                 callback({status: 0});
