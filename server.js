@@ -12,6 +12,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
+const getALLUser = require("./mysql/routers/getAllUser-router");
+console.log("server: ");
+app.use('/',getALLUser);
+
 var server = app.listen(4000, () => {
     console.log('listening at port %s', server.address().port);
 });
