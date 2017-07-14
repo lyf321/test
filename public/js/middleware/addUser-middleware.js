@@ -4,13 +4,21 @@
 
 import request from 'superagent'
 
-export default store=>next=>action=>{
-    console.log("middle: ");
+export default store=>next=>action=> {
     if (action.type === "ADD_USER") {
         request.post('/addUser')
+            .send({
+                userName: action.text.userName,
+                name: action.text.name,
+                age: action.text.age,
+                gender: action.text.gender,
+                phone: action.text.phone,
+                email: action.text.email,
+                remark: action.text.remark
+            })
             .end((err, res) => {
                 // next({type:"USER",user:res.body.user});
-                console.log("adduser:",res.body);
+                console.log("adduser:", res.body);
             });
     } else {
         next(action)

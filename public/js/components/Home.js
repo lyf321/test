@@ -7,6 +7,10 @@ class Home extends React.Component {
         this.props.getAllUser();
     }
 
+    addUser(){
+        browserHistory.push("/addUser");
+    }
+
     render() {
         const user = this.props.user.map((ele, index)=> {
             return <tr>
@@ -25,29 +29,7 @@ class Home extends React.Component {
         return <div>
             <button className="btn btn-info" onClick={this.searchAllUser.bind(this)}>查询所有</button>
 
-            <button className="btn btn-info" data-toggle="modal" data-target="#myModel">添加</button>
-
-            <div className="modal fade" classID="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="" den="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title" classID="myModalLabel">
-                                添加用户
-                            </h4>
-                        </div>
-                        <div className="modal-body">
-                            在这里添加一些文本
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">关闭
-                            </button>
-                            <button type="button" className="btn btn-primary">
-                                提交更改
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button className="btn btn-info" onClick={this.addUser.bind(this)} >添加</button>
 
             <table className="table">
                 <thead>
