@@ -23,13 +23,11 @@ class UpdateUser extends React.Component {
     }
 
     render() {
-
-
         return <div id="addUser">
             <br/>
             <div>
                 用户名：<input type="text" className="form-control" placeholder="用户名" classID="userName" ref="userName"
-                           defaultValue={this.props.updateInfo.userName}/><br/>
+                           defaultValue={this.props.updateInfo.userName} disabled/><br/>
             </div>
             <div>
                 姓名：<input type="text" className="form-control" placeholder="姓名" ref="name"
@@ -52,7 +50,7 @@ class UpdateUser extends React.Component {
                           defaultValue={this.props.updateInfo.remark}/><br/>
             </div>
             <div>
-                <input type="radio" name="sex" value="male"/>男
+                <input type="radio" name="sex" value="male" checked/>男
                 <input type="radio" name="sex" value="female"/>女
             </div>
             <button type="reset">取消</button>

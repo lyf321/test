@@ -7,7 +7,8 @@ const mapStateToProps = (state) =>{
     return {
         user:state.allUser.user,
         delStatus:state.delUser.delStatus,
-        addStatus:state.addUser.addStatus
+        addStatus:state.addUser.addStatus,
+        updateStatus:state.updateStatus.updateStatus
     }
 };
 

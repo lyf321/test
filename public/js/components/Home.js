@@ -33,10 +33,7 @@ class Home extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.props.delStatus === 1) {
-            this.props.getAllUser();
-        }
-        else if (this.props.addStatus === 1) {
+        if ((this.props.delStatus === 1) || (this.props.addStatus === 1) || (this.props.updateStatus === 1)) {
             this.props.getAllUser();
         }
     }
@@ -51,7 +48,8 @@ class Home extends React.Component {
                 <td>{ele.phone}</td>
                 <td>{ele.email}</td>
                 <td>{ele.remark}</td>
-                <td><span className="glyphicon glyphicon-pencil" onClick={this.updateUser.bind(this, index)}></span>       <span
+                <td><span className="glyphicon glyphicon-pencil" onClick={this.updateUser.bind(this, index)}></span>
+                    <span
                         className="glyphicon glyphicon-remove" onClick={this.deleteUser.bind(this, index)}></span>
                 </td>
             </tr>
