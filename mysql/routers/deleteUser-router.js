@@ -12,7 +12,6 @@ router.post('/deleteUser', (req, res) => {
         if (err) {
             httpCode = 400;
         } else {
-            console.log("httpcode",result);
             res.send({httpCode: httpCode, status: result})
         }
     });

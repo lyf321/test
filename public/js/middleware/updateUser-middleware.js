@@ -4,7 +4,7 @@
 import request from 'superagent'
 
 export default store=>next=>action=> {
-    console.log("updaate midd :",action.text);
+
     if (action.type === "UPDATE_USER") {
         request.post('/updateUser')
             .send({
@@ -18,7 +18,6 @@ export default store=>next=>action=> {
             })
             .end((err, res) => {
                 next({type:"UPDATE_USER_STATUS",status:res.body.result.status});
-                console.log("update  user  :", res.body);
             });
     } else {
         next(action)

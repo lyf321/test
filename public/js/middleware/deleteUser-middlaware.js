@@ -10,7 +10,6 @@ export default store=>next=>action=> {
         request.post('/deleteUser')
             .send({userName: action.index})
             .end((err, res) => {
-                console.log("deleteuUser:", res.body);
                 next({type: "DELETE_STATUS", status: res.body.status.status});
             });
     } else {

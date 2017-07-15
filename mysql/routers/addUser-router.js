@@ -13,7 +13,6 @@ router.post('/addUser', (req, res) => {
         if (err) {
             httpCode = 400;
         } else {
-            console.log("result: ", result);
             res.send({httpCode: httpCode, result})
         }
     });

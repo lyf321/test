@@ -3,7 +3,6 @@ import Home from '../components/Home';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) =>{
-    console.log("state: ",state);
     return {
         user:state.allUser.user,
         delStatus:state.delUser.delStatus,

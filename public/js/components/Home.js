@@ -18,7 +18,7 @@ class Home extends React.Component {
 
     updateUser(index) {
         const user = this.props.user;
-        console.log("user[index]: ", user[index].userName);
+
         this.props.updateInf({
             userName: user[index].userName,
             name: user[index].name,

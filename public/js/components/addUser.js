@@ -18,8 +18,6 @@ class AddUser extends React.Component {
 
         this.props.addUser({userName, name, age, gender, phone, email, remark});
 
-        console.log("this.props.addStatus ", this.props.addStatus);
-
         browserHistory.push("/");
 
     }
