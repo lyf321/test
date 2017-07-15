@@ -4,7 +4,7 @@
 import React from "react";
 import {browserHistory} from 'react-router'
 
-class addUser extends React.Component {
+class AddUser extends React.Component {
 
     addUser() {
 
@@ -38,9 +38,6 @@ class addUser extends React.Component {
                 <input type="text" className="form-control" placeholder="年龄" ref="age"/><br/>
             </div>
             <div>
-                <input type="text" className="form-control" placeholder="性别" ref="gender"/><br/>
-            </div>
-            <div>
                 <input type="text" className="form-control" placeholder="电话" ref="phone"/><br/>
             </div>
             <div>
@@ -60,4 +57,4 @@ class addUser extends React.Component {
     }
 }
 
-export default addUser;
+export default AddUser;

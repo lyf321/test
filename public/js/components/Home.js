@@ -13,8 +13,23 @@ class Home extends React.Component {
 
     deleteUser(index) {
         const user = this.props.user;
-        console.log("user[index]: ", user[index].userName);
         this.props.deleteUser(user[index].userName);
+    }
+
+    updateUser(index) {
+        const user = this.props.user;
+        console.log("user[index]: ", user[index].userName);
+        this.props.updateInf({
+            userName: user[index].userName,
+            name: user[index].name,
+            age: user[index].userName,
+            gender: user[index].age,
+            phone: user[index].phone,
+            email: user[index].email,
+            remark: user[index].remark
+        });
+
+        browserHistory.push('/updateUser');
     }
 
     componentDidUpdate() {
@@ -36,8 +51,9 @@ class Home extends React.Component {
                 <td>{ele.phone}</td>
                 <td>{ele.email}</td>
                 <td>{ele.remark}</td>
-                <td><span className="glyphicon glyphicon-pencil"></span> <span
-                    className="glyphicon glyphicon-remove" onClick={this.deleteUser.bind(this, index)}></span></td>
+                <td><span className="glyphicon glyphicon-pencil" onClick={this.updateUser.bind(this, index)}></span>       <span
+                        className="glyphicon glyphicon-remove" onClick={this.deleteUser.bind(this, index)}></span>
+                </td>
             </tr>
         });
 
@@ -67,4 +83,6 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export
+default
+Home;

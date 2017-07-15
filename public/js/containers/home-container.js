@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch)=> {
         },
         deleteUser:(index)=>{
             dispatch({type:"DELETE_USER",index})
+        },
+        updateInf:(text)=>{
+            dispatch({type:"UPDATE_INF",text})
         }
     }
 };

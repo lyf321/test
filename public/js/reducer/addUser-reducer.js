@@ -3,7 +3,7 @@
  */
 
 module.exports = (state = {addStatus: 0}, action) => {
-    console.log("action addUser ",action.status);
+
     switch (action.type) {
         case "ADD_USER_STATUS":
             return {addStatus: action.status};
