@@ -4,9 +4,17 @@
 
 const request = require('supertest');
 const server = require("../../server");
+const clear = require("../../mysql/helpers/clear");
 
 describe('test addUser', ()=> {
+
+    afterEach((done) => {
+        clear();
+        done();
+    });
+
     it('should return 200 and status:1', (done)=> {
+
         request(server)
             .post('/addUser')
             .send({
