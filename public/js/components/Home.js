@@ -7,8 +7,23 @@ class Home extends React.Component {
         this.props.getAllUser();
     }
 
-    addUser(){
+    addUser() {
         browserHistory.push("/addUser");
+    }
+
+    deleteUser(index) {
+        const user = this.props.user;
+        console.log("user[index]: ", user[index].userName);
+        this.props.deleteUser(user[index].userName);
+    }
+
+    componentDidUpdate() {
+        if (this.props.delStatus === 1) {
+            this.props.getAllUser();
+        }
+        else if (this.props.addStatus === 1) {
+            this.props.getAllUser();
+        }
     }
 
     render() {
@@ -22,14 +37,14 @@ class Home extends React.Component {
                 <td>{ele.email}</td>
                 <td>{ele.remark}</td>
                 <td><span className="glyphicon glyphicon-pencil"></span> <span
-                    className="glyphicon glyphicon-remove"></span></td>
+                    className="glyphicon glyphicon-remove" onClick={this.deleteUser.bind(this, index)}></span></td>
             </tr>
         });
 
         return <div>
             <button className="btn btn-info" onClick={this.searchAllUser.bind(this)}>查询所有</button>
 
-            <button className="btn btn-info" onClick={this.addUser.bind(this)} >添加</button>
+            <button className="btn btn-info" onClick={this.addUser.bind(this)}>添加</button>
 
             <table className="table">
                 <thead>

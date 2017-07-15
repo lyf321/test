@@ -17,8 +17,8 @@ export default store=>next=>action=> {
                 remark: action.text.remark
             })
             .end((err, res) => {
-                // next({type:"USER",user:res.body.user});
-                console.log("adduser:", res.body);
+                next({type:"ADD_USER_STATUS",status:res.body.result.status});
+                // console.log("adduser:", res.body);
             });
     } else {
         next(action)

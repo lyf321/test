@@ -6,7 +6,9 @@ import addUser from '../components/addUser';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) =>{
-
+    return{
+        addStatus:state.addUser.addStatus
+    }
 };
 
 const mapDispatchToProps = (dispatch)=> {

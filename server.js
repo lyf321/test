@@ -14,8 +14,10 @@ app.get('*', (req, res) => {
 
 const getALLUser = require("./mysql/routers/getAllUser-router");
 const addUser = require("./mysql/routers/addUser-router");
+const deleteUser = require("./mysql/routers/deleteUser-router");
 app.use('/',getALLUser);
 app.use('/',addUser);
+app.use('/',deleteUser);
 
 var server = app.listen(4000, () => {
     console.log('listening at port %s', server.address().port);
