@@ -6,7 +6,7 @@ const conn = require("../mysql");
 
 module.exports = function (data, callback) {
 
-    console.log("data", data)
+    console.log("data", data);
 
     let sql = "INSERT INTO user1(userName,name,age,gender,phone,email,remark) " +
         "VALUES('" + data.userName + "','" + data.name + "','" + data.age + "','" + data.gender + "','" + data.phone + "','" + data.email + "','" + data.remark + "')";
