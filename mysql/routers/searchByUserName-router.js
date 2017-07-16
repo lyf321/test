@@ -12,7 +12,6 @@ router.post('/searchByUserName', (req, res) => {
         if (err) {
             httpCode = 400;
         } else {
-            console.log("req.body:",result);
             res.send({httpCode: httpCode, user: result})
         }
     });

@@ -21,6 +21,7 @@ const searchByUserName = require("./mysql/routers/searchByUserName-router");
 app.use('/',getALLUser);
 app.use('/',addUser);
 app.use('/',deleteUser);
+app.use('/',updateUser);
 app.use('/',searchByUserName);
 
 var server = app.listen(4000, () => {

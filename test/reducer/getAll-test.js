@@ -5,7 +5,7 @@
 const reducer = require('../../public/js/reducer/home-reducer');
 const expect = require('chai').expect;
 
-describe('update User reducer test', () => {
+describe('get all User reducer test', () => {
     it('return updateStatus', () => {
         const state = {user: []};
         expect(reducer(state, {
