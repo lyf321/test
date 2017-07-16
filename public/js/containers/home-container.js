@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
+    console.log("state", state);
     return {
         user: state.allUser.user,
         delStatus: state.delUser.delStatus,
@@ -24,6 +25,15 @@ const mapDispatchToProps = (dispatch)=> {
         },
         searchByUserName: (text)=> {
             dispatch({type: "SEARCH_BY_USERNAME", text})
+        },
+        updateDelStatus: (status)=> {
+            dispatch({type: "DELETE_STATUS", status})
+        },
+        updateUpdateStatus: (status)=> {
+            dispatch({type: "UPDATE_USER_STATUS", status})
+        },
+        updateAddStatus: (status)=> {
+            dispatch({type: "ADD_USER_STATUS", status})
         }
     }
 };

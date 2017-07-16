@@ -41,6 +41,9 @@ class Home extends React.Component {
     componentDidUpdate() {
         if ((this.props.delStatus === 1) || (this.props.addStatus === 1) || (this.props.updateStatus === 1)) {
             this.props.getAllUser();
+            this.props.updateDelStatus(0);
+            this.props.updateAddStatus(0);
+            this.props.updateUpdateStatus(0);
         }
     }
 
@@ -62,9 +65,12 @@ class Home extends React.Component {
         });
 
         return <div>
+            <br/>
+            <br/>
             <button className="btn btn-info" onClick={this.searchAllUser.bind(this)}>查询所有用户</button>
 
-            <button className="btn btn-info" onClick={this.addUser.bind(this)}>添加</button>    <input type="text" ref="userID" placeholder="用户名 (001)" />
+            <button className="btn btn-info" onClick={this.addUser.bind(this)}>添加</button>
+            <input type="text" ref="userID" placeholder="用户名 (001)"/>
             <button className="btn btn-info" onClick={this.searchByUserName.bind(this)}>查询</button>
 
             <table className="table">

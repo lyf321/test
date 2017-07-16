@@ -16,10 +16,14 @@ class AddUser extends React.Component {
         const email = this.refs.email.value;
         const remark = this.refs.remark.value;
 
-        this.props.addUser({userName, name, age, gender, phone, email, remark});
 
-        browserHistory.push("/");
-
+        if (userName === "" || name === "" || age === "" || phone === "" || email === "" || remark === "") {
+            alert("请填写完整信息");
+        }
+        else {
+            this.props.addUser({userName, name, age, gender, phone, email, remark});
+            browserHistory.push("/");
+        }
     }
 
     render() {
