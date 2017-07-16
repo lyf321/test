@@ -2,25 +2,28 @@ import React from 'react'
 import Home from '../components/Home';
 import {connect} from 'react-redux';
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
-        user:state.allUser.user,
-        delStatus:state.delUser.delStatus,
-        addStatus:state.addUser.addStatus,
-        updateStatus:state.updateStatus.updateStatus
+        user: state.allUser.user,
+        delStatus: state.delUser.delStatus,
+        addStatus: state.addUser.addStatus,
+        updateStatus: state.updateStatus.updateStatus
     }
 };
 
 const mapDispatchToProps = (dispatch)=> {
     return {
-        getAllUser:()=>{
-            dispatch({type:"GET_ALL_USER"});
+        getAllUser: ()=> {
+            dispatch({type: "GET_ALL_USER"});
         },
-        deleteUser:(index)=>{
-            dispatch({type:"DELETE_USER",index})
+        deleteUser: (index)=> {
+            dispatch({type: "DELETE_USER", index})
         },
-        updateInf:(text)=>{
-            dispatch({type:"UPDATE_INF",text})
+        updateInf: (text)=> {
+            dispatch({type: "UPDATE_INF", text})
+        },
+        searchByUserName: (text)=> {
+            dispatch({type: "SEARCH_BY_USERNAME", text})
         }
     }
 };

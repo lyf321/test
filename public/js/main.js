@@ -14,9 +14,10 @@ import getAllUser from "./middleware/home-middleware";
 import addUserMid from "./middleware/addUser-middleware";
 import deleteUser from "./middleware/deleteUser-middlaware";
 import updateUserMid from "./middleware/updateUser-middleware";
+import searchByUserName from "./middleware/searchByUserName-containers";
 
 
-const createStoreWithMiddleware = applyMiddleware(getAllUser, addUserMid, deleteUser,updateUserMid)(createStore);
+const createStoreWithMiddleware = applyMiddleware(getAllUser, addUserMid, deleteUser,updateUserMid,searchByUserName)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
