@@ -7,4 +7,4 @@ services:
   - mysql
 before_install:
   - mysql -e 'CREATE DATABASE users;'
-  - mysql -e 'use users; CREATE table user1;'
+  - mysql -e 'use users; create table user1(useName varchar(20),name  varchar(50),age int(50),gender varchar(50),phone int(50),email varchar(50),remark varchar(50));'
