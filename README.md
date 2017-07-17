@@ -26,7 +26,7 @@ create databases users;
 use users;
 
 create table user1(
-  useName varchar(20),
+  userName varchar(20),
   name  varchar(50),
   age int(50),
   gender varchar(50),
