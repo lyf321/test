@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/lyf321/test.svg?branch=master)](https://travis-ci.org/lyf321/test.svg?branch=master)
 
 
 ### 启动程序
