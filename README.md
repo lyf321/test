@@ -22,7 +22,9 @@
 2.需要有测试数据库 **users**,表**user1**
 ```
 create databases users;
+
 use users;
+
 create table user1(
   useName varchar(20),
   name  varchar(50),
