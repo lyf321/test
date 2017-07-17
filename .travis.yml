@@ -6,4 +6,4 @@ node_js :
 services:
   - mysql
 before_install:
-  - mysql -e 'CREATE DATABASE users;'
+  - mysql -e 'CREATE DATABASE users;use users;create table user1;'
